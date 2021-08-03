@@ -1,24 +1,23 @@
 <template>
-  <div>
+  <div :class="$style.container">
     <slot />
   </div>
 </template>
 
-<style scoped lang="scss">
-$space: 20px;
-$breakpoints: 640px, 768px, 1024px, 1280px, 1536px;
+<style module lang="scss">
+@use "../variables" as variables;
 
-div {
+.container {
   margin-left: auto;
   margin-right: auto;
-  padding-left: $space;
-  padding-right: $space;
+  padding-left: variables.$gutter;
+  padding-right: variables.$gutter;
   width: 100%;
 }
 
-@each $breakpoint in $breakpoints {
+@each $breakpoint in variables.$breakpoints {
   @media (min-width: #{$breakpoint}) {
-    div {
+    .container {
       max-width: #{$breakpoint};
     }
   }
