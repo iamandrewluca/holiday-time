@@ -1,11 +1,11 @@
 import { Meta, Story } from '@storybook/vue'
 import { defineComponent } from '@nuxtjs/composition-api'
 import faker from 'faker'
-import Component from './container.component.vue'
+import TheComponent from './container.component.vue'
 
 export default <Meta>{
-  title: 'Components / Grid',
-  component: Component,
+  title: 'Components / Container',
+  component: TheComponent,
   parameters: {
     layout: 'fullscreen',
   },
@@ -13,7 +13,7 @@ export default <Meta>{
 
 export const Container: Story = () =>
   defineComponent({
-    components: { Component },
+    components: { TheComponent },
     faker,
-    template: `<Component>{{ $options.faker.lorem.paragraphs(10) }}</Component>`,
+    template: `<TheComponent>{{ $options.faker.lorem.paragraphs(10) }}</TheComponent>`,
   })

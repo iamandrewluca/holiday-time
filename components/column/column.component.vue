@@ -4,6 +4,11 @@
   </div>
 </template>
 
+<script lang="ts">
+import { defineComponent } from '@nuxtjs/composition-api'
+export default defineComponent({ name: 'Column' })
+</script>
+
 <style module lang="scss">
 @use "../variables" as variables;
 

@@ -3,11 +3,11 @@ import { defineComponent } from '@nuxtjs/composition-api'
 import faker from 'faker'
 import Container from '../container/container.component.vue'
 import Row from '../row/row.component.vue'
-import Component from './column.component.vue'
+import TheComponent from './column.component.vue'
 
 export default <Meta>{
-  title: 'Components / Grid',
-  component: Component,
+  title: 'Components / Column',
+  component: TheComponent,
   parameters: {
     layout: 'fullscreen',
   },
@@ -15,20 +15,20 @@ export default <Meta>{
 
 export const Column: Story = () =>
   defineComponent({
-    components: { Component, Container, Row },
+    components: { TheComponent, Container, Row },
     faker,
     template: `
       <Container>
         <Row>
-          <Component class='w-1/2 bg-red-200'>
+          <TheComponent class='w-1/2 bg-red-200'>
             {{ $options.faker.lorem.paragraphs(5) }}
-          </Component>
-          <Component class='w-1/2 bg-blue-200'>
+          </TheComponent>
+          <TheComponent class='w-1/2 bg-blue-200'>
             {{ $options.faker.lorem.paragraphs(5) }}
-          </Component>
-          <Component class='bg-yellow-200'>
+          </TheComponent>
+          <TheComponent class='bg-yellow-200'>
             {{ $options.faker.lorem.paragraphs(5) }}
-          </Component>
+          </TheComponent>
         </Row>
       </Container>
     `,
