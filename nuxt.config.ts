@@ -3,7 +3,7 @@ import { NuxtConfig } from '@nuxt/types'
 export default <NuxtConfig>{
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'js_challenge_jagaad_andrew-luca',
+    title: 'Holiday time!',
     htmlAttrs: {
       lang: 'en',
     },
@@ -13,7 +13,14 @@ export default <NuxtConfig>{
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        // https://github.com/wesbos/favicon
+        href: 'https://fav.farm/%F0%9F%8F%96%EF%B8%8F',
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
