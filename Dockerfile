@@ -1,24 +1,31 @@
-FROM node:lts-alpine
+FROM node:lts as builder
 
-RUN apk update && apk upgrade
-RUN apk add git python make g++
+WORKDIR /app
 
-WORKDIR /usr/src/app
+COPY . .
 
-COPY --chown=node:node ./package.json /usr/src/app/package.json
-COPY --chown=node:node ./yarn.lock /usr/src/app/yarn.lock
-
-RUN yarn install
-
-COPY --chown=node:node . /usr/src/app/
+RUN yarn install \
+  --prefer-offline \
+  --frozen-lockfile \
+  --non-interactive \
+  --production=false
 
 RUN yarn build
 
-USER node
+RUN rm -rf node_modules && \
+  NODE_ENV=production yarn install \
+  --prefer-offline \
+  --pure-lockfile \
+  --non-interactive \
+  --production=true
 
+FROM node:lts-alpine
+
+WORKDIR /app
+
+COPY --from=builder /app  .
+
+ENV HOST 0.0.0.0
 EXPOSE 3000
 
-ENV NUXT_HOST=0.0.0.0
-ENV NUXT_PORT=3000
-
-CMD ["yarn", "start"]
+CMD [ "yarn", "start" ]
