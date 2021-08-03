@@ -4,7 +4,7 @@ import faker from 'faker'
 import Component from './container.component.vue'
 
 export default <Meta>{
-  title: 'Container',
+  title: 'Grid',
   component: Component,
   parameters: {
     layout: 'fullscreen',
