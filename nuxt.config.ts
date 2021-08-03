@@ -51,7 +51,15 @@ export default <NuxtConfig>{
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: 'https://api.musement.com',
+    headers: {
+      'accept-language': 'en',
+      'content-type': 'application/json',
+      'x-musement-currency': 'EUR',
+      'x-musement-version': '3.4.0',
+    },
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

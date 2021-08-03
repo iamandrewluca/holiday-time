@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray-100 min-h-screen flex flex-col">
-    <div class="top-0 sticky">
+    <div class="top-0 sticky z-10 shadow-sm">
       <Header />
     </div>
     <div class="flex-grow" :class="$style.body">

@@ -100,7 +100,7 @@ export default defineComponent({
   }
 
   &__price {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     bottom: 10px;
     color: variables.$white;
@@ -111,7 +111,7 @@ export default defineComponent({
   }
 
   &__star {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 20px;
     color: variables.$white;
     cursor: pointer;
