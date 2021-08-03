@@ -10,7 +10,10 @@
 import { defineComponent } from '@nuxtjs/composition-api'
 import Container from '~/components/container/container.component.vue'
 
-export default defineComponent({ components: { Container } })
+export default defineComponent({
+  name: 'Header',
+  components: { Container },
+})
 </script>
 
 <style scoped lang="scss">
