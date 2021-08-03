@@ -6,7 +6,7 @@ import Row from '../row/row.component.vue'
 import Component from './column.component.vue'
 
 export default <Meta>{
-  title: 'Grid',
+  title: 'Components / Grid',
   component: Component,
   parameters: {
     layout: 'fullscreen',
