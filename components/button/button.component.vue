@@ -1,5 +1,8 @@
 <template>
-  <button :class="[$style.root, $style[variant]]">
+  <button
+    :class="[$style.root, $style[variant]]"
+    @click="$emit('click', $event)"
+  >
     <slot />
   </button>
 </template>
