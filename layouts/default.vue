@@ -14,9 +14,13 @@
 import { defineComponent } from '@nuxtjs/composition-api'
 import Header from '~/components/header/header.section.vue'
 import Footer from '~/components/footer/footer.section.vue'
+import { useGlobalStore } from '~/composition/use-global-store'
 
 export default defineComponent({
   components: { Header, Footer },
+  setup() {
+    useGlobalStore()
+  },
 })
 </script>
 
