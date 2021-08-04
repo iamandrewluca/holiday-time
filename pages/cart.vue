@@ -40,6 +40,14 @@
       >
         {{ item.retail_price.formatted_value }}
       </span>
+      <button
+        :class="{
+          'text-yellow-500': isInWishlist(item),
+        }"
+        @click="toggleInWishlist(item)"
+      >
+        <Star />
+      </button>
       <button @click="toggleInCart(item)">
         <Trash />
       </button>
@@ -61,13 +69,26 @@ import { defineComponent } from '@nuxtjs/composition-api'
 import Container from '~/components/container/container.component.vue'
 import { injectGlobalStore } from '~/composition/use-global-store'
 import Trash from '~/components/shared/trash.vue'
+import Star from '~/components/shared/star.vue'
 
 export default defineComponent({
-  components: { Trash, Container },
+  components: { Star, Trash, Container },
   setup() {
-    const { cart, totalCartPrice, toggleInCart } = injectGlobalStore()
+    const {
+      cart,
+      totalCartPrice,
+      toggleInCart,
+      toggleInWishlist,
+      isInWishlist,
+    } = injectGlobalStore()
 
-    return { cart, totalCartPrice, toggleInCart }
+    return {
+      cart,
+      totalCartPrice,
+      toggleInCart,
+      toggleInWishlist,
+      isInWishlist,
+    }
   },
 })
 </script>
