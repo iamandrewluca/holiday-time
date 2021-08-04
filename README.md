@@ -33,8 +33,6 @@ For detailed explanation on how things work, check out the [documentation](https
 - [x] Code linting with prettier/eslint
 - [x] Style linting with stylelint
 - [x] Performant code
-
-
 - [ ] Unit testing
 - [ ] E2E testing
 
