@@ -40,6 +40,9 @@
       >
         {{ item.retail_price.formatted_value }}
       </span>
+      <button @click="toggleInWishlist(item)">
+        <Trash />
+      </button>
     </div>
   </Container>
 </template>
@@ -48,13 +51,14 @@
 import { defineComponent } from '@nuxtjs/composition-api'
 import Container from '~/components/container/container.component.vue'
 import { injectGlobalStore } from '~/composition/use-global-store'
+import Trash from '~/components/shared/trash.vue'
 
 export default defineComponent({
-  components: { Container },
+  components: { Trash, Container },
   setup() {
-    const { wishlist } = injectGlobalStore()
+    const { wishlist, toggleInWishlist } = injectGlobalStore()
 
-    return { wishlist }
+    return { wishlist, toggleInWishlist }
   },
 })
 </script>

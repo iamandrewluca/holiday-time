@@ -40,6 +40,9 @@
       >
         {{ item.retail_price.formatted_value }}
       </span>
+      <button @click="toggleInCart(item)">
+        <Trash />
+      </button>
     </div>
     <div
       v-if="cart.length > 1"
@@ -57,13 +60,14 @@
 import { defineComponent } from '@nuxtjs/composition-api'
 import Container from '~/components/container/container.component.vue'
 import { injectGlobalStore } from '~/composition/use-global-store'
+import Trash from '~/components/shared/trash.vue'
 
 export default defineComponent({
-  components: { Container },
+  components: { Trash, Container },
   setup() {
-    const { cart, totalCartPrice } = injectGlobalStore()
+    const { cart, totalCartPrice, toggleInCart } = injectGlobalStore()
 
-    return { cart, totalCartPrice }
+    return { cart, totalCartPrice, toggleInCart }
   },
 })
 </script>
