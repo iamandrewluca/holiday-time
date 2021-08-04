@@ -4,6 +4,7 @@ export type Activity = {
   description: string
   cover_image_url: string
   retail_price: {
+    currency: string
     formatted_value: string
     value: number
   }
