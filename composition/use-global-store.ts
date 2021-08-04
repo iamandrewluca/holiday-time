@@ -12,7 +12,7 @@ import { Activity } from '~/types/activity'
 type Store = {
   wishlist: Ref<Activity[]>
   cart: Ref<Activity[]>
-  totalCartPrice: ComputedRef<number>
+  totalCartPrice: ComputedRef<string>
   toggleInCart: (activity: Activity) => void
   toggleInWishlist: (activity: Activity) => void
   isInCart: (activity: Activity) => boolean
@@ -37,9 +37,24 @@ export function useGlobalStore(): Store {
   const cart = ref<Activity[]>([])
   const wishlist = ref<Activity[]>([])
 
-  const totalCartPrice = computed(() =>
-    cart.value.reduce((acc, cur) => acc + cur.retail_price.value, 0)
-  )
+  const totalCartPrice = computed<string>(() => {
+    const total = cart.value.reduce((acc, cur) => {
+      return acc + cur.retail_price.value
+    }, 0)
+
+    const currencies = cart.value.map((i) => i.retail_price.currency)
+
+    if (new Set(currencies).size !== 1) {
+      return total.toFixed(2)
+    }
+
+    const formatter = new Intl.NumberFormat(navigator.language, {
+      style: 'currency',
+      currency: currencies[0],
+    })
+
+    return formatter.format(total)
+  })
 
   const filterBag = (bag: Activity[], activity: Activity) =>
     bag.filter((a) => a.uuid !== activity.uuid)
@@ -53,10 +68,12 @@ export function useGlobalStore(): Store {
     isInBag(bag, activity) ? filterBag(bag, activity) : [...bag, activity]
 
   function toggleInCart(activity: Activity) {
+    // TODO: Store in localStorage
     cart.value = toggleInBag(cart.value, activity)
   }
 
   function toggleInWishlist(activity: Activity) {
+    // TODO: Store in localStorage
     wishlist.value = toggleInBag(wishlist.value, activity)
   }
 

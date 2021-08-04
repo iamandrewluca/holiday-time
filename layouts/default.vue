@@ -1,7 +1,11 @@
 <template>
   <div class="bg-gray-100 min-h-screen flex flex-col">
     <div class="top-0 sticky z-10 shadow-sm">
-      <Header />
+      <Header
+        :cart-count="cart.length"
+        :wishlist-count="wishlist.length"
+        :price="totalCartPrice"
+      />
     </div>
     <div class="flex-grow" :class="$style.body">
       <Nuxt />
@@ -19,7 +23,9 @@ import { useGlobalStore } from '~/composition/use-global-store'
 export default defineComponent({
   components: { Header, Footer },
   setup() {
-    useGlobalStore()
+    const { totalCartPrice, cart, wishlist } = useGlobalStore()
+
+    return { totalCartPrice, cart, wishlist }
   },
 })
 </script>
