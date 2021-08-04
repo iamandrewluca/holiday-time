@@ -39,15 +39,18 @@ $gray: #ccc;
 
 .contained {
   background-color: $gray;
+  border: 1px solid $gray;
 
   &:hover {
     background-color: $dark-blue;
+    border-color: $dark-blue;
     color: variables.$white;
   }
 
   &:active,
   &:focus {
     background-color: $dark;
+    border-color: $dark;
     color: variables.$white;
   }
 }
@@ -65,6 +68,7 @@ $gray: #ccc;
   &:active,
   &:focus {
     background-color: $dark;
+    border-color: $dark;
     color: variables.$white;
   }
 }
