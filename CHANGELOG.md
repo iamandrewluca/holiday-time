@@ -1,3 +1,13 @@
+# [1.0.0-alpha.4](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2021-08-04)
+
+
+### Features
+
+* add activities to cart and wishlist ([#18](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/issues/18)) ([e6d870a](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/commit/e6d870ad638ea09401dd2eaf0b951230076f0334))
+* add basic cart and wishlist pages ([c6aab8c](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/commit/c6aab8c5e9ec3a21f7169205bec5c9cc10743f17))
+* keep store state in localStorage ([6fb7ba8](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/commit/6fb7ba85145fd7d7bcddf959bf396a7a813c5d77))
+* show cart/wishlist count and total price in header ([#19](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/issues/19)) ([63fc058](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/commit/63fc0580c86c815dafa99fd69c93c64a0e35016e))
+
 # [1.0.0-alpha.3](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2021-08-04)
 
 
