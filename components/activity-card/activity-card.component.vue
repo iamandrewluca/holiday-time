@@ -4,6 +4,7 @@
       <button
         class="activity-card__star"
         :class="{ 'activity-card__star--active': inWishlist }"
+        @click="$emit('add-to-wishlist')"
       >
         <Star />
       </button>
