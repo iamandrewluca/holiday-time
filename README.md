@@ -19,6 +19,33 @@ $ yarn generate
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
 
+## Demo points
+
+- [x] TypeScript
+- [x] Nuxt with SSR
+- [x] Storybook
+- [x] Tailwind CSS
+- [x] Automated release notes and CHANGELOG
+- [x] GitHub Action to run test/lint
+- [x] SCSS preprocesor
+- [x] Simple build with node/npm or docker
+- [x] Responsive
+- [x] Code linting with prettier/eslint
+- [x] Style linting with stylelint
+- [x] Performant code
+
+
+- [ ] Unit testing
+- [ ] E2E testing
+
+## Demo features see [`CHANGELOG.md`](./CHANGELOG.md)
+
+- [x] Develop the “Add/Remove to Bag” and “Add/Remove to Wishlist” actions
+- [x] Develop a product listing pagination with 6 products per page
+- [x] The bag in the header must be updated with the new quantities and the new total price
+- [x] Build a mini-bag with convenient actions, coherent with design
+- [x] Make the application responsive
+
 ## Special Directories
 
 You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
