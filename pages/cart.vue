@@ -26,7 +26,7 @@
         alt=""
         class="rounded-xl overflow-hidden w-16 h-16 object-cover flex-shrink-0"
       />
-      <span class="truncate">{{ item.title }}</span>
+      <span class="truncate flex-grow">{{ item.title }}</span>
       <span
         class="
           text-xs
