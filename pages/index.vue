@@ -1,6 +1,12 @@
 <template>
   <Container>
-    <Row>
+    <div
+      v-if="fetchState.pending"
+      class="text-4xl flex justify-center px-10 py-24"
+    >
+      Loading activities...
+    </div>
+    <Row v-else>
       <Column
         v-for="item in items"
         :key="item.uuid"
@@ -18,7 +24,7 @@
         />
       </Column>
     </Row>
-    <div class="flex justify-center mb-6">
+    <div v-if="!fetchState.pending" class="flex justify-center mb-6">
       <Pagination @next="shiftPage(+1)" @previous="shiftPage(-1)" />
     </div>
   </Container>
@@ -50,7 +56,7 @@ export default defineComponent({
   components: { ActivityCard, Column, Row, Container, Pagination },
   setup() {
     const { page, shiftPage } = useRouterPage()
-    const items = useActivities(page)
+    const { items, fetchState } = useActivities(page)
     const { isInWishlist, isInCart, toggleInWishlist, toggleInCart } =
       injectGlobalStore()
 
@@ -61,6 +67,7 @@ export default defineComponent({
       isInCart,
       toggleInWishlist,
       toggleInCart,
+      fetchState,
     }
   },
 })
@@ -70,7 +77,7 @@ function useActivities(page: Ref<number>) {
   const items = ref<Activity[]>([])
   const perPage = 6
 
-  const { fetch } = useFetch(async () => {
+  const { fetch, fetchState } = useFetch(async () => {
     const url = getActivitiesUrl(page.value * perPage, perPage)
     const response = await $axios.get(url)
     items.value = response.data
@@ -78,7 +85,7 @@ function useActivities(page: Ref<number>) {
 
   watch(page, () => fetch())
 
-  return items
+  return { items, fetchState }
 }
 
 function useRouterPage(defaultPage = 0) {
