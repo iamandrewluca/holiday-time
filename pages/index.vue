@@ -14,38 +14,73 @@
         />
       </Column>
     </Row>
+    <div class="flex justify-center mb-6">
+      <Pagination @next="shiftPage(+1)" @previous="shiftPage(-1)" />
+    </div>
   </Container>
 </template>
 
 <script lang="ts">
 import {
   defineComponent,
+  readonly,
+  Ref,
   ref,
   useContext,
   useFetch,
+  useRoute,
+  useRouter,
+  watch,
 } from '@nuxtjs/composition-api'
-import faker from 'faker'
 import Container from '~/components/container/container.component.vue'
 import { getActivitiesUrl } from '~/utils/get-activities-url'
 import Row from '~/components/row/row.component.vue'
 import Column from '~/components/column/column.component.vue'
 import ActivityCard from '~/components/activity-card/activity-card.component.vue'
+import Pagination from '~/components/pagination/pagination.component.vue'
+import { clamp } from '~/utils/clamp'
 
 export default defineComponent({
-  faker,
-  components: { ActivityCard, Column, Row, Container },
+  components: { ActivityCard, Column, Row, Container, Pagination },
   setup() {
-    const { $axios } = useContext()
-    const items = ref([])
+    const { page, shiftPage } = useRouterPage()
+    const items = useActivities(page)
 
-    useFetch(async () => {
-      const response = await $axios.get(getActivitiesUrl(0, 6))
-      items.value = response.data
-    })
-
-    return {
-      items,
-    }
+    return { items, shiftPage }
   },
 })
+
+function useActivities(page: Ref<number>) {
+  const { $axios } = useContext()
+  const items = ref([])
+  const perPage = 6
+
+  const { fetch } = useFetch(async () => {
+    const url = getActivitiesUrl(page.value * perPage, perPage)
+    const response = await $axios.get(url)
+    items.value = response.data
+  })
+
+  watch(page, () => fetch())
+
+  return items
+}
+
+function useRouterPage(defaultPage = 0) {
+  const route = useRoute()
+  const router = useRouter()
+  const queryPage = Number.parseInt(route.value.query.page as string)
+  const page = ref(Number.isNaN(queryPage) ? defaultPage : queryPage)
+
+  function shiftPage(shift: number) {
+    page.value = clamp(page.value + shift, 0, Infinity)
+  }
+
+  watch(page, () => router.push({ query: { page: page.value } }))
+
+  return {
+    page: readonly(page),
+    shiftPage,
+  }
+}
 </script>
