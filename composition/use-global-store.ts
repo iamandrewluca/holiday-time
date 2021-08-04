@@ -3,6 +3,7 @@ import {
   ComputedRef,
   inject,
   InjectionKey,
+  onMounted,
   provide,
   Ref,
   ref,
@@ -37,6 +38,11 @@ export function useGlobalStore(): Store {
   const cart = ref<Activity[]>([])
   const wishlist = ref<Activity[]>([])
 
+  onMounted(() => {
+    cart.value = JSON.parse(localStorage.getItem('cart') ?? '[]')
+    wishlist.value = JSON.parse(localStorage.getItem('wishlist') ?? '[]')
+  })
+
   const totalCartPrice = computed<string>(() => {
     const total = cart.value.reduce((acc, cur) => {
       return acc + cur.retail_price.value
@@ -68,13 +74,13 @@ export function useGlobalStore(): Store {
     isInBag(bag, activity) ? filterBag(bag, activity) : [...bag, activity]
 
   function toggleInCart(activity: Activity) {
-    // TODO: Store in localStorage
     cart.value = toggleInBag(cart.value, activity)
+    localStorage.setItem('cart', JSON.stringify(cart.value))
   }
 
   function toggleInWishlist(activity: Activity) {
-    // TODO: Store in localStorage
     wishlist.value = toggleInBag(wishlist.value, activity)
+    localStorage.setItem('wishlist', JSON.stringify(wishlist.value))
   }
 
   const isInCart = (activity: Activity) => isInBag(cart.value, activity)
