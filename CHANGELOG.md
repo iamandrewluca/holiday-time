@@ -1,3 +1,13 @@
+# [1.0.0-alpha.3](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2021-08-04)
+
+
+### Features
+
+* add next/previous pagination ([#17](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/issues/17)) ([1d891bf](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/commit/1d891bf33102f225bf7d5cb65418463e9043ae1a))
+* **components:** add activity card and aspect ratio ([#12](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/issues/12)) ([a7b866b](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/commit/a7b866ba9343c45005a8c34986660bce8c406da3))
+* **components:** add basic button ([#11](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/issues/11)) ([ffa85f0](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/commit/ffa85f0676e181aab53cdbe076050311db34f0d4))
+* **pages:** fetch and show 6 activities ([#13](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/issues/13)) ([9a02486](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/commit/9a024867851980d589e375fff754f0e12d0be324))
+
 # [1.0.0-alpha.2](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2021-08-03)
 
 
