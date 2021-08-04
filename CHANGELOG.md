@@ -1,3 +1,16 @@
+# [1.0.0-alpha.5](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2021-08-04)
+
+
+### Bug Fixes
+
+* **cart/wishlist:** grow title to push actions ([bb25de6](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/commit/bb25de6f2bc29759ee8a2d9b79808c01df56b024))
+
+
+### Features
+
+* add cart/wishlist between them ([1b077da](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/commit/1b077daa8e22d1dcfa1745e4e58168ba0172c23b))
+* add delete button on cart and wishlist pages ([c9a1a11](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/commit/c9a1a1147673f2b6d5b54ec62c2e21c4c29594d7))
+
 # [1.0.0-alpha.4](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2021-08-04)
 
 
