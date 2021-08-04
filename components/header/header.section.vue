@@ -1,7 +1,12 @@
 <template>
   <header class="header">
     <Container class="flex justify-between items-center">
-      <span class="header__logo">🏖</span>
+      <nuxt-link
+        :to="{ path: '/', query: { page: $route.query.page } }"
+        class="header__logo"
+      >
+        🏖
+      </nuxt-link>
       <div class="inline-flex space-x-3 items-center">
         <span
           v-if="cartCount !== 0"
