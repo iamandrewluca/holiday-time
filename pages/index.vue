@@ -25,7 +25,11 @@
       </Column>
     </Row>
     <div v-if="!fetchState.pending" class="flex justify-center mb-6">
-      <Pagination @next="shiftPage(+1)" @previous="shiftPage(-1)" />
+      <Pagination
+        :page="page"
+        @next="shiftPage(+1)"
+        @previous="shiftPage(-1)"
+      />
     </div>
   </Container>
 </template>
@@ -61,6 +65,7 @@ export default defineComponent({
       injectGlobalStore()
 
     return {
+      page,
       items,
       shiftPage,
       isInWishlist,
@@ -78,7 +83,8 @@ function useActivities(page: Ref<number>) {
   const perPage = 6
 
   const { fetch, fetchState } = useFetch(async () => {
-    const url = getActivitiesUrl(page.value * perPage, perPage)
+    const offset = (page.value - 1) * perPage
+    const url = getActivitiesUrl(offset, perPage)
     const response = await $axios.get(url)
     items.value = response.data
   })
@@ -88,14 +94,14 @@ function useActivities(page: Ref<number>) {
   return { items, fetchState }
 }
 
-function useRouterPage(defaultPage = 0) {
+function useRouterPage(defaultPage = 1) {
   const route = useRoute()
   const router = useRouter()
   const queryPage = Number.parseInt(route.value.query.page as string, 10)
   const page = ref(Number.isNaN(queryPage) ? defaultPage : queryPage)
 
   function shiftPage(shift: number) {
-    page.value = clamp(page.value + shift, 0, Infinity)
+    page.value = clamp(page.value + shift, 1, Infinity)
   }
 
   watch(page, () => router.push({ query: { page: page.value.toString(10) } }))

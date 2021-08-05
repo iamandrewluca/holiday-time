@@ -19,6 +19,9 @@
         ></path>
       </svg>
     </button>
+    <span class="bg-yellow-300 text-yellow-900 rounded-lg py-2 px-5">
+      {{ page }}
+    </span>
     <button
       class="bg-yellow-300 text-yellow-900 rounded-lg py-2 px-5"
       @click="$emit('next')"
@@ -40,3 +43,16 @@
     </button>
   </div>
 </template>
+
+<script lang="ts">
+import { PropType, defineComponent } from '@vue/composition-api'
+
+export default defineComponent({
+  props: {
+    page: {
+      type: Number as PropType<number>,
+      required: true,
+    },
+  },
+})
+</script>
