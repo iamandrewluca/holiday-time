@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AspectRatio should render and match snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="root"
+    >
+      <div
+        class="inner"
+      />
+    </div>
+  </div>
+</body>
+`;

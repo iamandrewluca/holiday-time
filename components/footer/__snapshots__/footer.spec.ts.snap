@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should render and match snapshot 1`] = `
+<body>
+  <div>
+    <footer
+      class="footer"
+    >
+      <div>
+        <span>
+          ✨✨✨
+        </span>
+         
+        <span
+          class="footer__text"
+        >
+          Have fun in 2021
+        </span>
+         
+        <span>
+          ✨✨✨
+        </span>
+      </div>
+    </footer>
+  </div>
+</body>
+`;
