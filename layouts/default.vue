@@ -15,21 +15,37 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
+import { defineComponent, onMounted, watch } from '@nuxtjs/composition-api'
 import Header from '~/components/header/header.section.vue'
 import Footer from '~/components/footer/footer.section.vue'
-import { getGlobalStore, provideGlobalStore } from '~/utils/use-global-store'
+import { provideGlobalStore } from '~/utils/use-global-store'
+import { getGlobalStore, Store } from '~/utils/get-global-store'
 
 export default defineComponent({
   components: { Header, Footer },
   setup() {
     const store = getGlobalStore()
+    keepInLocalStorage(store)
     provideGlobalStore(store)
     const { totalCartPrice, cart, wishlist } = store
 
     return { totalCartPrice, cart, wishlist }
   },
 })
+
+function keepInLocalStorage(store: Store) {
+  onMounted(() => {
+    store.cart.value = JSON.parse(localStorage.getItem('cart') ?? '[]')
+    store.wishlist.value = JSON.parse(localStorage.getItem('wishlist') ?? '[]')
+  })
+
+  watch(store.cart, (cart) =>
+    localStorage.setItem('cart', JSON.stringify(cart))
+  )
+  watch(store.wishlist, (wishlist) =>
+    localStorage.setItem('wishlist', JSON.stringify(wishlist))
+  )
+}
 </script>
 
 <style module lang="scss">
