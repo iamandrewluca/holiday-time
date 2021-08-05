@@ -81,10 +81,10 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-@use '../variables' as variables;
+@import '../variables';
 
 .header {
-  background-color: variables.$white;
+  background-color: $white;
   padding-bottom: 0.5rem;
   padding-top: 0.5rem;
 

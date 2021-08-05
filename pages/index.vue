@@ -54,7 +54,7 @@ import ActivityCard from '~/components/activity-card/activity-card.component.vue
 import Pagination from '~/components/pagination/pagination.component.vue'
 import { clamp } from '~/utils/clamp'
 import { Activity } from '~/types/activity'
-import { injectGlobalStore } from '~/composition/use-global-store'
+import { useGlobalStore } from '~/utils/use-global-store'
 
 export default defineComponent({
   components: { ActivityCard, Column, Row, Container, Pagination },
@@ -62,7 +62,7 @@ export default defineComponent({
     const { page, shiftPage } = useRouterPage()
     const { items, fetchState } = useActivities(page)
     const { isInWishlist, isInCart, toggleInWishlist, toggleInCart } =
-      injectGlobalStore()
+      useGlobalStore()
 
     return {
       page,

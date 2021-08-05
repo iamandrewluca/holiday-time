@@ -21,11 +21,11 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-@use '../variables' as variables;
+@import '../variables';
 
 .footer {
-  background-color: variables.$white;
-  color: variables.$goldy;
+  background-color: $white;
+  color: $goldy;
   padding-bottom: 1rem;
   padding-top: 1rem;
   text-align: center;

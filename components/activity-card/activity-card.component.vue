@@ -64,10 +64,10 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-@use '../variables' as variables;
+@import '../variables';
 
 .activity-card {
-  background-color: variables.$white;
+  background-color: $white;
   border-radius: 30px;
   box-shadow: 0 0 20px -10px #cba;
   padding: 20px;
@@ -104,7 +104,7 @@ export default defineComponent({
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     bottom: 10px;
-    color: variables.$white;
+    color: $white;
     font-size: 0.7rem;
     left: 10px;
     padding: 5px 10px;
@@ -114,7 +114,7 @@ export default defineComponent({
   &__star {
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 20px;
-    color: variables.$white;
+    color: $white;
     cursor: pointer;
     padding: 5px;
     position: absolute;

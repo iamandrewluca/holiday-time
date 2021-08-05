@@ -23,7 +23,7 @@ export default defineComponent({
 </script>
 
 <style module lang="scss">
-@use '../variables' as variables;
+@import '../variables';
 
 $dark: #333;
 $dark-blue: #334;
@@ -44,14 +44,14 @@ $gray: #ccc;
   &:hover {
     background-color: $dark-blue;
     border-color: $dark-blue;
-    color: variables.$white;
+    color: $white;
   }
 
   &:active,
   &:focus {
     background-color: $dark;
     border-color: $dark;
-    color: variables.$white;
+    color: $white;
   }
 }
 
@@ -62,14 +62,14 @@ $gray: #ccc;
   &:hover {
     background-color: $dark-blue;
     border-color: $dark-blue;
-    color: variables.$white;
+    color: $white;
   }
 
   &:active,
   &:focus {
     background-color: $dark;
     border-color: $dark;
-    color: variables.$white;
+    color: $white;
   }
 }
 </style>

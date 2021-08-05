@@ -22,19 +22,20 @@ type Store = {
 
 const key: InjectionKey<Store> = Symbol('useGlobalStore')
 
-function provideGlobalStore(store: Store) {
+export function provideGlobalStore(store: Store) {
   provide(key, store)
+  return store
 }
 
-export function injectGlobalStore() {
+export function useGlobalStore() {
   const value = inject(key)
   if (value) return value
   throw new Error(
-    'injectGlobalStore must be used within a component that uses useGlobalStore'
+    'useGlobalStore must be used within a component that uses provideGlobalStore'
   )
 }
 
-export function useGlobalStore(): Store {
+export function getGlobalStore(): Store {
   const cart = ref<Activity[]>([])
   const wishlist = ref<Activity[]>([])
 
@@ -86,7 +87,7 @@ export function useGlobalStore(): Store {
   const isInCart = (activity: Activity) => isInBag(cart.value, activity)
   const isInWishlist = (activity: Activity) => isInBag(wishlist.value, activity)
 
-  const returnValue: Store = {
+  return {
     cart,
     wishlist,
     totalCartPrice,
@@ -95,8 +96,4 @@ export function useGlobalStore(): Store {
     isInCart,
     isInWishlist,
   }
-
-  provideGlobalStore(returnValue)
-
-  return returnValue
 }

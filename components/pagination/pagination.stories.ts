@@ -18,7 +18,7 @@ export const Pagination: Story = () =>
     faker,
     template: `
       <Container class='flex justify-center py-5'>
-        <TheComponent />
+        <TheComponent :page='1' />
       </Container>
     `,
   })

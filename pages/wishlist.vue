@@ -58,7 +58,7 @@
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api'
 import Container from '~/components/container/container.component.vue'
-import { injectGlobalStore } from '~/composition/use-global-store'
+import { useGlobalStore } from '~/utils/use-global-store'
 import Trash from '~/components/shared/trash.vue'
 import Bag from '~/components/shared/bag.vue'
 
@@ -66,7 +66,7 @@ export default defineComponent({
   components: { Bag, Trash, Container },
   setup() {
     const { wishlist, toggleInWishlist, toggleInCart, isInCart } =
-      injectGlobalStore()
+      useGlobalStore()
 
     return { wishlist, toggleInWishlist, toggleInCart, isInCart }
   },

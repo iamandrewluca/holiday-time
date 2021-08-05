@@ -18,12 +18,14 @@
 import { defineComponent } from '@nuxtjs/composition-api'
 import Header from '~/components/header/header.section.vue'
 import Footer from '~/components/footer/footer.section.vue'
-import { useGlobalStore } from '~/composition/use-global-store'
+import { getGlobalStore, provideGlobalStore } from '~/utils/use-global-store'
 
 export default defineComponent({
   components: { Header, Footer },
   setup() {
-    const { totalCartPrice, cart, wishlist } = useGlobalStore()
+    const store = getGlobalStore()
+    provideGlobalStore(store)
+    const { totalCartPrice, cart, wishlist } = store
 
     return { totalCartPrice, cart, wishlist }
   },
@@ -31,10 +33,10 @@ export default defineComponent({
 </script>
 
 <style module lang="scss">
-@use '../components/variables' as variables;
+@import '../components/variables';
 
 .body {
-  padding-bottom: variables.$gutter;
-  padding-top: variables.$gutter;
+  padding-bottom: $gutter;
+  padding-top: $gutter;
 }
 </style>

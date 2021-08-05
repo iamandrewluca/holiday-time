@@ -10,11 +10,11 @@ export default defineComponent({ name: 'Column' })
 </script>
 
 <style module lang="scss">
-@use "../variables" as variables;
+@import '../variables';
 
 .column {
   max-width: 100%;
-  padding-left: variables.$gutter;
-  padding-right: variables.$gutter;
+  padding-left: $gutter;
+  padding-right: $gutter;
 }
 </style>

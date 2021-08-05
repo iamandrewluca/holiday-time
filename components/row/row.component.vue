@@ -10,12 +10,12 @@ export default defineComponent({ name: 'Row' })
 </script>
 
 <style module lang="scss">
-@use "../variables" as variables;
+@import '../variables';
 
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-left: variables.$gutter * -1;
-  margin-right: variables.$gutter * -1;
+  margin-left: $gutter * -1;
+  margin-right: $gutter * -1;
 }
 </style>
