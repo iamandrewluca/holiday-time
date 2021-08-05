@@ -1,3 +1,15 @@
+# [1.0.0-alpha.6](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2021-08-05)
+
+
+### Bug Fixes
+
+* **button:** adjust border for contained variant ([01acafd](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/commit/01acafd84661b8539554a4d041d5aed76a607d88))
+
+
+### Features
+
+* add simple loading state for activities ([ef240b8](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/commit/ef240b86ecbb0124f31ef3b6c62e2cbf75fe7481))
+
 # [1.0.0-alpha.5](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2021-08-04)
 
 
