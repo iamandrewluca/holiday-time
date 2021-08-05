@@ -23,3 +23,18 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+declare namespace Cypress {
+  interface Chainable {
+    shouldHaveTrimmedText(value: string): Chainable<Element>
+  }
+}
+
+Cypress.Commands.add(
+  'shouldHaveTrimmedText',
+  { prevSubject: true },
+  (subject, equalTo) => {
+    expect(subject.text().trim()).to.eq(equalTo)
+    return subject
+  }
+)

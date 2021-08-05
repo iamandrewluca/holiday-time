@@ -1,5 +1,5 @@
 <template>
-  <div class="inline-flex justify-even space-x-3">
+  <div class="inline-flex justify-even space-x-3" data-testid="pagination">
     <button
       class="bg-yellow-300 text-yellow-900 rounded-lg py-2 px-5"
       @click="$emit('previous')"

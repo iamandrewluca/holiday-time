@@ -4,6 +4,7 @@
       <button
         class="activity-card__star"
         :class="{ 'activity-card__star--active': inWishlist }"
+        data-testid="add-to-wishlist"
         @click="$emit('add-to-wishlist')"
       >
         <Star />
@@ -15,6 +16,7 @@
     <p class="activity-card__description">{{ description }}</p>
     <Button
       class="w-full"
+      data-testid="add-to-cart"
       :variant="inCart ? 'contained' : 'outlined'"
       @click="$emit('add-to-cart')"
     >

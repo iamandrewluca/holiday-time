@@ -6,7 +6,7 @@
     >
       Loading activities...
     </div>
-    <Row v-else>
+    <Row v-else data-testid="activities-grid">
       <Column
         v-for="item in items"
         :key="item.uuid"

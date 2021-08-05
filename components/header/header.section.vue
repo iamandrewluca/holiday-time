@@ -10,6 +10,7 @@
       <div class="inline-flex space-x-3 items-center">
         <span
           v-if="cartCount !== 0"
+          data-testid="header-cart-total"
           class="text-xs rounded-full bg-yellow-500 text-white py-1 px-2"
         >
           {{ price }}
@@ -17,6 +18,7 @@
         <nuxt-link to="/cart" class="relative">
           <span
             v-if="cartCount !== 0"
+            data-testid="header-cart-count"
             class="
               absolute
               bg-yellow-500
@@ -34,6 +36,7 @@
         <nuxt-link to="/wishlist" class="relative">
           <span
             v-if="wishlistCount !== 0"
+            data-testid="header-wishlist-count"
             class="
               absolute
               bg-yellow-500
