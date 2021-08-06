@@ -10,6 +10,7 @@
     <div
       v-for="item in cart"
       :key="item.uuid"
+      data-testid="cart-item"
       class="
         rounded-xl
         bg-white
