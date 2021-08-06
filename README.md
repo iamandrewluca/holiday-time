@@ -1,4 +1,4 @@
-# js_challenge_jagaad_andrew-luca
+# 🏖️ Holiday time!
 
 ## Build Setup
 
@@ -15,6 +15,20 @@ $ yarn start
 
 # generate static project
 $ yarn generate
+```
+
+## Docker instructions
+
+**Build current project docker image**
+
+```shell
+docker build -t iamandrewluca/js_challenge_jagaad_andrew-luca .
+```
+
+**Run build image with port 3000 mapped**
+
+```shell
+docker run -it -p 3000:3000 iamandrewluca/js_challenge_jagaad_andrew-luca
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
