@@ -1,5 +1,20 @@
 # 🏖️ Holiday time!
 
+<details>
+<summary>Cart image</summary>
+
+![localhost_3000_ (1)](https://user-images.githubusercontent.com/1881266/128444562-74513fa4-3719-4a88-a37e-3e9cff37b1e5.png)
+
+</details>
+
+
+<details>
+<summary>Wishlist image</summary>
+
+![localhost_3000_ (2)](https://user-images.githubusercontent.com/1881266/128444637-e361e471-99d8-453a-825a-fe0b02426e4e.png)
+
+</details>
+
 ![localhost_3000_](https://user-images.githubusercontent.com/1881266/128444333-30e8deef-6c58-4816-9362-c81d06353579.png)
 
 
