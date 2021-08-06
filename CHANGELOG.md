@@ -1,3 +1,10 @@
+# [1.0.0-alpha.7](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2021-08-06)
+
+
+### Bug Fixes
+
+* **deps:** bump actions/setup-node from 2.1.5 to 2.3.2 ([#20](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/issues/20)) ([bcf013d](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/commit/bcf013d7859be8ae7d659158ff488beaebe9fc05))
+
 # [1.0.0-alpha.6](https://github.com/iamandrewluca/js_challenge_jagaad_andrew-luca/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2021-08-05)
 
 
