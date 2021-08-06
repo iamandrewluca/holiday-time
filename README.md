@@ -1,5 +1,8 @@
 # 🏖️ Holiday time!
 
+![localhost_3000_](https://user-images.githubusercontent.com/1881266/128444333-30e8deef-6c58-4816-9362-c81d06353579.png)
+
+
 ## Build Setup
 
 ```bash
