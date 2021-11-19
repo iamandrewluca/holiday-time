@@ -11,6 +11,8 @@ on:
 jobs:
   ci:
     runs-on: ${{ matrix.os }}
+    if: ${{ github.actor != 'dependabot[bot]' }}
+
 
     strategy:
       matrix:
