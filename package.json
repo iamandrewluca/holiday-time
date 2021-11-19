@@ -60,7 +60,7 @@
     "node-sass": "^6.0",
     "postcss": "^8.3.6",
     "prettier": "^2.3.2",
-    "semantic-release": "^17.4.4",
+    "semantic-release": "^17.4.7",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-sass-guidelines": "^8.0.0",
