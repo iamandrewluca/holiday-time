@@ -35,7 +35,7 @@
     "@nuxtjs/composition-api": "^0.30.0",
     "@nuxtjs/eslint-config-typescript": "^6.0.1",
     "@nuxtjs/eslint-module": "^3.0.2",
-    "@nuxtjs/storybook": "^4.1.1",
+    "@nuxtjs/storybook": "^4.2.0",
     "@nuxtjs/stylelint-module": "^4.0.0",
     "@nuxtjs/tailwindcss": "^4.2.0",
     "@semantic-release/changelog": "^6.0.1",
