@@ -41,7 +41,7 @@
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
     "@testing-library/cypress": "^8.0.0",
-    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/vue": "^5.8.2",
     "@types/faker": "^5.5.7",
     "@types/jest": "^27.0.3",
